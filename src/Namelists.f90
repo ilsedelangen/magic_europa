@@ -392,6 +392,8 @@ contains
          l_mag    =.false.
          l_mag_nl =.false.
          l_mag_LF =.false.
+      else if ( mode == 11 ) then
+         l_mag_nl =.false.
       end if
 
       if ( mode == 7 .or. mode == 8 .or. mode == 9 .or. mode == 10 ) then
