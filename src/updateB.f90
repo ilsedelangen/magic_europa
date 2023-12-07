@@ -29,7 +29,7 @@ module updateB_mod
    use RMS, only: dtBPolLMr, dtBPol2hInt, dtBTor2hInt
    use constants, only: pi, zero, one, two, three, half
    use special, only: n_imp, l_imp, amp_imp, expo_imp, bmax_imp, rrMP, l_curr, &
-       &              amp_curr, fac_loop
+       &              amp_curr, fac_loop, freq_imp, phi0
    use fields, only: work_LMloc
    use radial_der_even, only: get_ddr_even
    use radial_der, only: get_dr, get_ddr, get_dr_Rloc, get_ddr_ghost, exch_ghosts, &
@@ -66,6 +66,49 @@ module updateB_mod
    &         prepareB_FD, fill_ghosts_B, updateB_FD, assemble_mag_Rloc
 
 contains
+
+!---------------------------------------------------------------------
+
+   subroutine field_coef(t, freq, amp, phi0_deg, G01, G11, H11)
+      !
+      ! Calculate the G01, G11, and H11 magnetic field coefficients
+      ! which describes an imposed external equatorial dipole. 
+
+      implicit none
+
+      real(cp) :: t
+      real(cp) :: freq
+      real(cp) :: amp
+      real(cp) :: phi0_deg
+      real(cp) :: phi0
+      real :: omega
+      real :: G01
+      real :: G11
+      real :: H11 
+
+      phi0 = phi0_deg*pi/180
+
+      omega = 2*pi*freq
+
+      !G01 = real(-amp*(1 + cmplx(0.0249*cos(phi0) + 0.0185*sin(phi0),      &
+      !&  0.0249*sin(phi0) + 0.0185*cos(phi0))*exp(cmplx(0.0,1.0)*omega*t)))
+      !G11 = real(-amp*(0.00473 + cmplx(0.346*cos(phi0) - 0.101*sin(phi0),  &
+      !&  0.346*sin(phi0) - 0.101*cos(phi0))*exp(cmplx(0.0,1.0)*omega*t)))
+      !H11 = real(-amp*cmplx(0.173*sin(phi0) + 0.0512*cos(phi0),            &
+      !&  0.173*cos(phi0) + 0.0512*sin(phi0))*exp(cmplx(0.0,1.0)*omega*t))
+
+      G01 = real(-amp*cmplx(0.0249*cos(phi0) + 0.0185*sin(phi0),      &
+      &  0.0249*sin(phi0) + 0.0185*cos(phi0))*exp(cmplx(0.0,1.0)*omega*t))
+      G11 = real(-amp*cmplx(0.346*cos(phi0) - 0.101*sin(phi0),  &
+      &  0.346*sin(phi0) - 0.101*cos(phi0))*exp(cmplx(0.0,1.0)*omega*t))
+      H11 = real(-amp*cmplx(0.173*sin(phi0) + 0.0512*cos(phi0),            &
+      &  0.173*cos(phi0) + 0.0512*sin(phi0))*exp(cmplx(0.0,1.0)*omega*t))
+
+      
+   end subroutine field_coef
+
+
+!----------------------------------------------------------------------
 
    subroutine initialize_updateB()
       !
@@ -266,6 +309,7 @@ contains
       integer :: nLMB2, nLMB
       integer :: n_r_out         ! No of cheb polynome (degree+1)
       integer :: nR              ! No of radial grid point
+      real    :: G01, G11, H11       ! External field coefficient
 
       integer, pointer :: nLMBs2(:),lm2l(:),lm2m(:)
       integer, pointer :: sizeLMB2(:,:),lm2(:,:)
@@ -503,6 +547,23 @@ contains
                         end if
                      end if ! n_imp > 2
                   end if ! m1 = 0
+
+                  if ( n_imp == 8 ) then
+                     ! Impose a time-dependent external field. Only dipole components.  
+                     yl0_norm = sqrt(4*pi/(2*l1+1)) ! Normalization factor following from Schmidt-normalized Legendre polynomials
+                     prefac = real(2*l1+1,kind=cp)/real((l1+1),kind=cp)
+                     call field_coef(time,freq_imp,amp_imp,phi0,G01,G11,H11)  
+                     if ( l1 == 1 .and. m1 == 0 ) then
+                        rhs1(1,2*lm-1,threadid)=-prefac*r_cmb*yl0_norm*G01
+                        rhs1(1,2*lm,threadid)  =0.0_cp
+                     else if ( l1 == 1 .and. m1 == 1 ) then
+                        rhs1(1,2*lm-1,threadid)=-prefac*r_cmb*yl0_norm*G11*sqrt(2.0)/2.0
+                        rhs1(1,2*lm,threadid)  =prefac*r_cmb*yl0_norm*H11*sqrt(2.0)/2.0
+                     else
+                        rhs1(1,2*lm-1,threadid)=0.0_cp
+                        rhs1(1,2*lm,threadid)  =0.0_cp
+                     end if
+                  end if
 
                   do nR=2,n_r_max-1
                      if ( l_LCR .and. nR<=n_r_LCR ) then
