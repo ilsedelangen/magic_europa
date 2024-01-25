@@ -948,6 +948,13 @@ contains
              sigma=one/lambda
              call get_dr(lambda,dsigma,n_r_max,rscheme_oc)
              dLlambda=dsigma/lambda
+          else if ( nVarCond == 5 ) then ! Exponentially decaying
+             do n_r=1,n_r_max
+                sigma(n_r)     = exp(log(con_LambdaMatch)/(r_cmb-r_icb)*(r_cmb - r(n_r)))
+                dsigma(n_r)    = -log(con_LambdaMatch)/(r_cmb-r_icb)*sigma(n_r)
+                lambda(n_r)    = one/sigma(n_r)
+                dLlambda(n_r)  = -dsigma(n_r)/sigma(n_r)**two  
+             end do
           end if
       end if
 
