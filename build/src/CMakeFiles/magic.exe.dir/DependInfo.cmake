@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_Fortran
   "/home/delangen/magic/src/TO_arrays.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/TO_arrays.f90.o"
   "/home/delangen/magic/src/algebra_lapack.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/algebra_lapack.f90.o"
   "/home/delangen/magic/src/blocking.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/blocking.f90.o"
+  "/home/delangen/magic/src/calc_ave.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/calc_ave.f90.o"
   "/home/delangen/magic/src/char_manip.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/char_manip.f90.o"
   "/home/delangen/magic/src/chebyshev.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/chebyshev.f90.o"
   "/home/delangen/magic/src/chebyshev_polynoms.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/chebyshev_polynoms.f90.o"
@@ -31,6 +32,7 @@ set(CMAKE_DEPENDS_CHECK_Fortran
   "/home/delangen/magic/src/fields.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/fields.f90.o"
   "/home/delangen/magic/src/fields_average.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/fields_average.f90.o"
   "/home/delangen/magic/src/finite_differences.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/finite_differences.f90.o"
+  "/home/delangen/magic/src/force_average.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/force_average.f90.o"
   "/home/delangen/magic/src/getDlm.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/getDlm.f90.o"
   "/home/delangen/magic/src/get_nl.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/get_nl.f90.o"
   "/home/delangen/magic/src/get_td.f90" "/home/delangen/magic/build/src/CMakeFiles/magic.exe.dir/get_td.f90.o"
@@ -104,11 +106,11 @@ set(CMAKE_Fortran_COMPILER_ID "Intel")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_Fortran
-  "BUILD_DATE=\"2023/12/07 16:59:03\""
+  "BUILD_DATE=\"2024/01/30 11:55:26\""
   "COMP_OPT"
   "DEFAULT_OUTPUT_PRECISION=sngl"
   "DEFAULT_PRECISION=dble"
-  "GIT_VERSION=\"3831ceb\""
+  "GIT_VERSION=\"5651228\""
   "SHT_PADDING"
   "WITH_MPI"
   "WITH_PRECOND_BJ"

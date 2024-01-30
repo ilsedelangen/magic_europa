@@ -16,6 +16,10 @@ FILE(REMOVE
   "../modules/BORDERED_MATRICES.mod"
   "CMakeFiles/magic.exe.dir/bordered_matrices.mod.stamp"
 
+  "../modules/calc_ave.mod"
+  "../modules/CALC_AVE.mod"
+  "CMakeFiles/magic.exe.dir/calc_ave.mod.stamp"
+
   "../modules/charmanip.mod"
   "../modules/CHARMANIP.mod"
   "CMakeFiles/magic.exe.dir/charmanip.mod.stamp"
@@ -91,6 +95,10 @@ FILE(REMOVE
   "../modules/finite_differences.mod"
   "../modules/FINITE_DIFFERENCES.mod"
   "CMakeFiles/magic.exe.dir/finite_differences.mod.stamp"
+
+  "../modules/force_average.mod"
+  "../modules/FORCE_AVERAGE.mod"
+  "CMakeFiles/magic.exe.dir/force_average.mod.stamp"
 
   "../modules/general_arrays_mod.mod"
   "../modules/GENERAL_ARRAYS_MOD.mod"

@@ -383,6 +383,33 @@ blocking.f90.s:
 	cd /home/delangen/magic/build && $(MAKE) -f src/CMakeFiles/magic.exe.dir/build.make src/CMakeFiles/magic.exe.dir/blocking.f90.s
 .PHONY : blocking.f90.s
 
+calc_ave.o: calc_ave.f90.o
+
+.PHONY : calc_ave.o
+
+# target to build an object file
+calc_ave.f90.o:
+	cd /home/delangen/magic/build && $(MAKE) -f src/CMakeFiles/magic.exe.dir/build.make src/CMakeFiles/magic.exe.dir/calc_ave.f90.o
+.PHONY : calc_ave.f90.o
+
+calc_ave.i: calc_ave.f90.i
+
+.PHONY : calc_ave.i
+
+# target to preprocess a source file
+calc_ave.f90.i:
+	cd /home/delangen/magic/build && $(MAKE) -f src/CMakeFiles/magic.exe.dir/build.make src/CMakeFiles/magic.exe.dir/calc_ave.f90.i
+.PHONY : calc_ave.f90.i
+
+calc_ave.s: calc_ave.f90.s
+
+.PHONY : calc_ave.s
+
+# target to generate assembly for a file
+calc_ave.f90.s:
+	cd /home/delangen/magic/build && $(MAKE) -f src/CMakeFiles/magic.exe.dir/build.make src/CMakeFiles/magic.exe.dir/calc_ave.f90.s
+.PHONY : calc_ave.f90.s
+
 char_manip.o: char_manip.f90.o
 
 .PHONY : char_manip.o
@@ -868,6 +895,33 @@ finite_differences.s: finite_differences.f90.s
 finite_differences.f90.s:
 	cd /home/delangen/magic/build && $(MAKE) -f src/CMakeFiles/magic.exe.dir/build.make src/CMakeFiles/magic.exe.dir/finite_differences.f90.s
 .PHONY : finite_differences.f90.s
+
+force_average.o: force_average.f90.o
+
+.PHONY : force_average.o
+
+# target to build an object file
+force_average.f90.o:
+	cd /home/delangen/magic/build && $(MAKE) -f src/CMakeFiles/magic.exe.dir/build.make src/CMakeFiles/magic.exe.dir/force_average.f90.o
+.PHONY : force_average.f90.o
+
+force_average.i: force_average.f90.i
+
+.PHONY : force_average.i
+
+# target to preprocess a source file
+force_average.f90.i:
+	cd /home/delangen/magic/build && $(MAKE) -f src/CMakeFiles/magic.exe.dir/build.make src/CMakeFiles/magic.exe.dir/force_average.f90.i
+.PHONY : force_average.f90.i
+
+force_average.s: force_average.f90.s
+
+.PHONY : force_average.s
+
+# target to generate assembly for a file
+force_average.f90.s:
+	cd /home/delangen/magic/build && $(MAKE) -f src/CMakeFiles/magic.exe.dir/build.make src/CMakeFiles/magic.exe.dir/force_average.f90.s
+.PHONY : force_average.f90.s
 
 getDlm.o: getDlm.f90.o
 
@@ -2769,6 +2823,9 @@ help:
 	@echo "... blocking.o"
 	@echo "... blocking.i"
 	@echo "... blocking.s"
+	@echo "... calc_ave.o"
+	@echo "... calc_ave.i"
+	@echo "... calc_ave.s"
 	@echo "... char_manip.o"
 	@echo "... char_manip.i"
 	@echo "... char_manip.s"
@@ -2823,6 +2880,9 @@ help:
 	@echo "... finite_differences.o"
 	@echo "... finite_differences.i"
 	@echo "... finite_differences.s"
+	@echo "... force_average.o"
+	@echo "... force_average.i"
+	@echo "... force_average.s"
 	@echo "... getDlm.o"
 	@echo "... getDlm.i"
 	@echo "... getDlm.s"

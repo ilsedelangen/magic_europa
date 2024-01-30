@@ -263,6 +263,14 @@ src/CMakeFiles/magic.exe.dir/blocking.f90.o.provides.build:
 	$(CMAKE_COMMAND) -E touch src/CMakeFiles/magic.exe.dir/blocking.f90.o.provides.build
 src/CMakeFiles/magic.exe.dir/build: src/CMakeFiles/magic.exe.dir/blocking.f90.o.provides.build
 
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.requires: src/CMakeFiles/magic.exe.dir/precision_mod.mod.proxy
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.o: src/CMakeFiles/magic.exe.dir/precision_mod.mod.stamp
+src/CMakeFiles/magic.exe.dir/calc_ave.mod.proxy: src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.provides
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.provides.build:
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod modules/calc_ave src/CMakeFiles/magic.exe.dir/calc_ave.mod.stamp Intel
+	$(CMAKE_COMMAND) -E touch src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.provides.build
+src/CMakeFiles/magic.exe.dir/build: src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.provides.build
+
 src/CMakeFiles/magic.exe.dir/char_manip.f90.o.requires: src/CMakeFiles/magic.exe.dir/precision_mod.mod.proxy
 src/CMakeFiles/magic.exe.dir/char_manip.f90.o: src/CMakeFiles/magic.exe.dir/precision_mod.mod.stamp
 src/CMakeFiles/magic.exe.dir/charmanip.mod.proxy: src/CMakeFiles/magic.exe.dir/char_manip.f90.o.provides
@@ -580,6 +588,8 @@ src/CMakeFiles/magic.exe.dir/fields_average.f90.o.requires: src/CMakeFiles/magic
 src/CMakeFiles/magic.exe.dir/fields_average.f90.o: src/CMakeFiles/magic.exe.dir/constants.mod.stamp
 src/CMakeFiles/magic.exe.dir/fields_average.f90.o.requires: src/CMakeFiles/magic.exe.dir/fieldslast.mod.proxy
 src/CMakeFiles/magic.exe.dir/fields_average.f90.o: src/CMakeFiles/magic.exe.dir/fieldslast.mod.stamp
+src/CMakeFiles/magic.exe.dir/fields_average.f90.o.requires: src/CMakeFiles/magic.exe.dir/force_average.mod.proxy
+src/CMakeFiles/magic.exe.dir/fields_average.f90.o: src/CMakeFiles/magic.exe.dir/force_average.mod.stamp
 src/CMakeFiles/magic.exe.dir/fields_average.f90.o.requires: src/CMakeFiles/magic.exe.dir/graphout_mod.mod.proxy
 src/CMakeFiles/magic.exe.dir/fields_average.f90.o: src/CMakeFiles/magic.exe.dir/graphout_mod.mod.stamp
 src/CMakeFiles/magic.exe.dir/fields_average.f90.o.requires: src/CMakeFiles/magic.exe.dir/kinetic_energy.mod.proxy
@@ -637,6 +647,18 @@ src/CMakeFiles/magic.exe.dir/finite_differences.f90.o.provides.build:
 	$(CMAKE_COMMAND) -E cmake_copy_f90_mod modules/finite_differences src/CMakeFiles/magic.exe.dir/finite_differences.mod.stamp Intel
 	$(CMAKE_COMMAND) -E touch src/CMakeFiles/magic.exe.dir/finite_differences.f90.o.provides.build
 src/CMakeFiles/magic.exe.dir/build: src/CMakeFiles/magic.exe.dir/finite_differences.f90.o.provides.build
+
+src/CMakeFiles/magic.exe.dir/force_average.f90.o.requires: src/CMakeFiles/magic.exe.dir/calc_ave.mod.proxy
+src/CMakeFiles/magic.exe.dir/force_average.f90.o: src/CMakeFiles/magic.exe.dir/calc_ave.mod.stamp
+src/CMakeFiles/magic.exe.dir/force_average.f90.o.requires: src/CMakeFiles/magic.exe.dir/radial_data.mod.proxy
+src/CMakeFiles/magic.exe.dir/force_average.f90.o: src/CMakeFiles/magic.exe.dir/radial_data.mod.stamp
+src/CMakeFiles/magic.exe.dir/force_average.f90.o.requires: src/CMakeFiles/magic.exe.dir/truncation.mod.proxy
+src/CMakeFiles/magic.exe.dir/force_average.f90.o: src/CMakeFiles/magic.exe.dir/truncation.mod.stamp
+src/CMakeFiles/magic.exe.dir/force_average.mod.proxy: src/CMakeFiles/magic.exe.dir/force_average.f90.o.provides
+src/CMakeFiles/magic.exe.dir/force_average.f90.o.provides.build:
+	$(CMAKE_COMMAND) -E cmake_copy_f90_mod modules/force_average src/CMakeFiles/magic.exe.dir/force_average.mod.stamp Intel
+	$(CMAKE_COMMAND) -E touch src/CMakeFiles/magic.exe.dir/force_average.f90.o.provides.build
+src/CMakeFiles/magic.exe.dir/build: src/CMakeFiles/magic.exe.dir/force_average.f90.o.provides.build
 
 src/CMakeFiles/magic.exe.dir/getDlm.f90.o.requires: src/CMakeFiles/magic.exe.dir/blocking.mod.proxy
 src/CMakeFiles/magic.exe.dir/getDlm.f90.o: src/CMakeFiles/magic.exe.dir/blocking.mod.stamp
@@ -863,6 +885,8 @@ src/CMakeFiles/magic.exe.dir/magic.f90.o.requires: src/CMakeFiles/magic.exe.dir/
 src/CMakeFiles/magic.exe.dir/magic.f90.o: src/CMakeFiles/magic.exe.dir/fields_average_mod.mod.stamp
 src/CMakeFiles/magic.exe.dir/magic.f90.o.requires: src/CMakeFiles/magic.exe.dir/fieldslast.mod.proxy
 src/CMakeFiles/magic.exe.dir/magic.f90.o: src/CMakeFiles/magic.exe.dir/fieldslast.mod.stamp
+src/CMakeFiles/magic.exe.dir/magic.f90.o.requires: src/CMakeFiles/magic.exe.dir/force_average.mod.proxy
+src/CMakeFiles/magic.exe.dir/magic.f90.o: src/CMakeFiles/magic.exe.dir/force_average.mod.stamp
 src/CMakeFiles/magic.exe.dir/magic.f90.o.requires: src/CMakeFiles/magic.exe.dir/geos.mod.proxy
 src/CMakeFiles/magic.exe.dir/magic.f90.o: src/CMakeFiles/magic.exe.dir/geos.mod.stamp
 src/CMakeFiles/magic.exe.dir/magic.f90.o.requires: src/CMakeFiles/magic.exe.dir/horizontal_data.mod.proxy
@@ -1753,6 +1777,8 @@ src/CMakeFiles/magic.exe.dir/rIter.f90.o.requires: src/CMakeFiles/magic.exe.dir/
 src/CMakeFiles/magic.exe.dir/rIter.f90.o: src/CMakeFiles/magic.exe.dir/dtb_mod.mod.stamp
 src/CMakeFiles/magic.exe.dir/rIter.f90.o.requires: src/CMakeFiles/magic.exe.dir/fields.mod.proxy
 src/CMakeFiles/magic.exe.dir/rIter.f90.o: src/CMakeFiles/magic.exe.dir/fields.mod.stamp
+src/CMakeFiles/magic.exe.dir/rIter.f90.o.requires: src/CMakeFiles/magic.exe.dir/force_average.mod.proxy
+src/CMakeFiles/magic.exe.dir/rIter.f90.o: src/CMakeFiles/magic.exe.dir/force_average.mod.stamp
 src/CMakeFiles/magic.exe.dir/rIter.f90.o.requires: src/CMakeFiles/magic.exe.dir/geos.mod.proxy
 src/CMakeFiles/magic.exe.dir/rIter.f90.o: src/CMakeFiles/magic.exe.dir/geos.mod.stamp
 src/CMakeFiles/magic.exe.dir/rIter.f90.o.requires: src/CMakeFiles/magic.exe.dir/graphout_mod.mod.proxy

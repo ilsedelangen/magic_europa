@@ -91,6 +91,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/magic.exe.dir/updateXI.f90.o"
   "CMakeFiles/magic.exe.dir/updateZ.f90.o"
   "CMakeFiles/magic.exe.dir/useful.f90.o"
+  "CMakeFiles/magic.exe.dir/calc_ave.f90.o"
+  "CMakeFiles/magic.exe.dir/force_average.f90.o"
   "CMakeFiles/magic.exe.dir/fft_fftw.f90.o"
   "CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.o"
   "CMakeFiles/magic.exe.dir/algebra_lapack.f90.o"

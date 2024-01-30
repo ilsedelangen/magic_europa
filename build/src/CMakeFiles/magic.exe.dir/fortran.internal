@@ -4,6 +4,7 @@ provides
  band_matrices
  blocking
  bordered_matrices
+ calc_ave
  charmanip
  chebyshev
  chebyshev_polynoms_mod
@@ -23,6 +24,7 @@ provides
  fields_average_mod
  fieldslast
  finite_differences
+ force_average
  general_arrays_mod
  geos
  getdlm_mod

@@ -186,6 +186,9 @@ class MagicGraph(MagicSetup):
                 self.Br = G.br
                 self.Btheta = G.bt
                 self.Bphi = G.bp
+                self.LFr = G.LFr
+                self.LFtheta = G.LFt
+                self.LFphi = G.LFp
 
             if self.prmag != 0 and self.n_r_ic_max > 1:
                 self.radius_ic = G.radius_ic

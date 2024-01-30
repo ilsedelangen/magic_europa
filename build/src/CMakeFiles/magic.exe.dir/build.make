@@ -2265,9 +2265,57 @@ src/CMakeFiles/magic.exe.dir/useful.f90.o.provides: src/CMakeFiles/magic.exe.dir
 src/CMakeFiles/magic.exe.dir/useful.f90.o.provides.build: src/CMakeFiles/magic.exe.dir/useful.f90.o
 
 
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.o: src/CMakeFiles/magic.exe.dir/flags.make
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.o: ../src/calc_ave.f90
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/delangen/magic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building Fortran object src/CMakeFiles/magic.exe.dir/calc_ave.f90.o"
+	cd /home/delangen/magic/build/src && /opt/local/mpi/openmpi/openmpi-2.1.2_intel-2019.4/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/delangen/magic/src/calc_ave.f90 -o CMakeFiles/magic.exe.dir/calc_ave.f90.o
+
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing Fortran source to CMakeFiles/magic.exe.dir/calc_ave.f90.i"
+	cd /home/delangen/magic/build/src && /opt/local/mpi/openmpi/openmpi-2.1.2_intel-2019.4/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/delangen/magic/src/calc_ave.f90 > CMakeFiles/magic.exe.dir/calc_ave.f90.i
+
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling Fortran source to assembly CMakeFiles/magic.exe.dir/calc_ave.f90.s"
+	cd /home/delangen/magic/build/src && /opt/local/mpi/openmpi/openmpi-2.1.2_intel-2019.4/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/delangen/magic/src/calc_ave.f90 -o CMakeFiles/magic.exe.dir/calc_ave.f90.s
+
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.requires:
+
+.PHONY : src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.requires
+
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.provides: src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.requires
+	$(MAKE) -f src/CMakeFiles/magic.exe.dir/build.make src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.provides.build
+.PHONY : src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.provides
+
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.provides.build: src/CMakeFiles/magic.exe.dir/calc_ave.f90.o
+
+
+src/CMakeFiles/magic.exe.dir/force_average.f90.o: src/CMakeFiles/magic.exe.dir/flags.make
+src/CMakeFiles/magic.exe.dir/force_average.f90.o: ../src/force_average.f90
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/delangen/magic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building Fortran object src/CMakeFiles/magic.exe.dir/force_average.f90.o"
+	cd /home/delangen/magic/build/src && /opt/local/mpi/openmpi/openmpi-2.1.2_intel-2019.4/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/delangen/magic/src/force_average.f90 -o CMakeFiles/magic.exe.dir/force_average.f90.o
+
+src/CMakeFiles/magic.exe.dir/force_average.f90.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing Fortran source to CMakeFiles/magic.exe.dir/force_average.f90.i"
+	cd /home/delangen/magic/build/src && /opt/local/mpi/openmpi/openmpi-2.1.2_intel-2019.4/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -E /home/delangen/magic/src/force_average.f90 > CMakeFiles/magic.exe.dir/force_average.f90.i
+
+src/CMakeFiles/magic.exe.dir/force_average.f90.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling Fortran source to assembly CMakeFiles/magic.exe.dir/force_average.f90.s"
+	cd /home/delangen/magic/build/src && /opt/local/mpi/openmpi/openmpi-2.1.2_intel-2019.4/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -S /home/delangen/magic/src/force_average.f90 -o CMakeFiles/magic.exe.dir/force_average.f90.s
+
+src/CMakeFiles/magic.exe.dir/force_average.f90.o.requires:
+
+.PHONY : src/CMakeFiles/magic.exe.dir/force_average.f90.o.requires
+
+src/CMakeFiles/magic.exe.dir/force_average.f90.o.provides: src/CMakeFiles/magic.exe.dir/force_average.f90.o.requires
+	$(MAKE) -f src/CMakeFiles/magic.exe.dir/build.make src/CMakeFiles/magic.exe.dir/force_average.f90.o.provides.build
+.PHONY : src/CMakeFiles/magic.exe.dir/force_average.f90.o.provides
+
+src/CMakeFiles/magic.exe.dir/force_average.f90.o.provides.build: src/CMakeFiles/magic.exe.dir/force_average.f90.o
+
+
 src/CMakeFiles/magic.exe.dir/fft_fftw.f90.o: src/CMakeFiles/magic.exe.dir/flags.make
 src/CMakeFiles/magic.exe.dir/fft_fftw.f90.o: ../src/fft_fftw.f90
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/delangen/magic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_93) "Building Fortran object src/CMakeFiles/magic.exe.dir/fft_fftw.f90.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/delangen/magic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building Fortran object src/CMakeFiles/magic.exe.dir/fft_fftw.f90.o"
 	cd /home/delangen/magic/build/src && /opt/local/mpi/openmpi/openmpi-2.1.2_intel-2019.4/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/delangen/magic/src/fft_fftw.f90 -o CMakeFiles/magic.exe.dir/fft_fftw.f90.o
 
 src/CMakeFiles/magic.exe.dir/fft_fftw.f90.i: cmake_force
@@ -2291,7 +2339,7 @@ src/CMakeFiles/magic.exe.dir/fft_fftw.f90.o.provides.build: src/CMakeFiles/magic
 
 src/CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.o: src/CMakeFiles/magic.exe.dir/flags.make
 src/CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.o: ../src/cosine_transform_odd.f90
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/delangen/magic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_94) "Building Fortran object src/CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/delangen/magic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Building Fortran object src/CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.o"
 	cd /home/delangen/magic/build/src && /opt/local/mpi/openmpi/openmpi-2.1.2_intel-2019.4/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/delangen/magic/src/cosine_transform_odd.f90 -o CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.o
 
 src/CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.i: cmake_force
@@ -2315,7 +2363,7 @@ src/CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.o.provides.build: src/CMak
 
 src/CMakeFiles/magic.exe.dir/algebra_lapack.f90.o: src/CMakeFiles/magic.exe.dir/flags.make
 src/CMakeFiles/magic.exe.dir/algebra_lapack.f90.o: ../src/algebra_lapack.f90
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/delangen/magic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_95) "Building Fortran object src/CMakeFiles/magic.exe.dir/algebra_lapack.f90.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/delangen/magic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_97) "Building Fortran object src/CMakeFiles/magic.exe.dir/algebra_lapack.f90.o"
 	cd /home/delangen/magic/build/src && /opt/local/mpi/openmpi/openmpi-2.1.2_intel-2019.4/bin/mpif90  $(Fortran_DEFINES) $(Fortran_INCLUDES) $(Fortran_FLAGS) -c /home/delangen/magic/src/algebra_lapack.f90 -o CMakeFiles/magic.exe.dir/algebra_lapack.f90.o
 
 src/CMakeFiles/magic.exe.dir/algebra_lapack.f90.i: cmake_force
@@ -2431,6 +2479,8 @@ magic_exe_OBJECTS = \
 "CMakeFiles/magic.exe.dir/updateXI.f90.o" \
 "CMakeFiles/magic.exe.dir/updateZ.f90.o" \
 "CMakeFiles/magic.exe.dir/useful.f90.o" \
+"CMakeFiles/magic.exe.dir/calc_ave.f90.o" \
+"CMakeFiles/magic.exe.dir/force_average.f90.o" \
 "CMakeFiles/magic.exe.dir/fft_fftw.f90.o" \
 "CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.o" \
 "CMakeFiles/magic.exe.dir/algebra_lapack.f90.o"
@@ -2530,6 +2580,8 @@ magic.exe: src/CMakeFiles/magic.exe.dir/updateWPS.f90.o
 magic.exe: src/CMakeFiles/magic.exe.dir/updateXI.f90.o
 magic.exe: src/CMakeFiles/magic.exe.dir/updateZ.f90.o
 magic.exe: src/CMakeFiles/magic.exe.dir/useful.f90.o
+magic.exe: src/CMakeFiles/magic.exe.dir/calc_ave.f90.o
+magic.exe: src/CMakeFiles/magic.exe.dir/force_average.f90.o
 magic.exe: src/CMakeFiles/magic.exe.dir/fft_fftw.f90.o
 magic.exe: src/CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.o
 magic.exe: src/CMakeFiles/magic.exe.dir/algebra_lapack.f90.o
@@ -2543,7 +2595,7 @@ magic.exe: /opt/local/intel/ps_xe-2019.4/compilers_and_libraries_2019.4.243/linu
 magic.exe: /opt/local/intel/ps_xe-2019.4/compilers_and_libraries_2019.4.243/linux/mkl/lib/intel64/libmkl_sequential.so
 magic.exe: /opt/local/intel/ps_xe-2019.4/compilers_and_libraries_2019.4.243/linux/mkl/lib/intel64/libmkl_intel_lp64.so
 magic.exe: src/CMakeFiles/magic.exe.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/delangen/magic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_96) "Linking Fortran executable ../magic.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/delangen/magic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_98) "Linking Fortran executable ../magic.exe"
 	cd /home/delangen/magic/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/magic.exe.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -2643,6 +2695,8 @@ src/CMakeFiles/magic.exe.dir/requires: src/CMakeFiles/magic.exe.dir/updateWPS.f9
 src/CMakeFiles/magic.exe.dir/requires: src/CMakeFiles/magic.exe.dir/updateXI.f90.o.requires
 src/CMakeFiles/magic.exe.dir/requires: src/CMakeFiles/magic.exe.dir/updateZ.f90.o.requires
 src/CMakeFiles/magic.exe.dir/requires: src/CMakeFiles/magic.exe.dir/useful.f90.o.requires
+src/CMakeFiles/magic.exe.dir/requires: src/CMakeFiles/magic.exe.dir/calc_ave.f90.o.requires
+src/CMakeFiles/magic.exe.dir/requires: src/CMakeFiles/magic.exe.dir/force_average.f90.o.requires
 src/CMakeFiles/magic.exe.dir/requires: src/CMakeFiles/magic.exe.dir/fft_fftw.f90.o.requires
 src/CMakeFiles/magic.exe.dir/requires: src/CMakeFiles/magic.exe.dir/cosine_transform_odd.f90.o.requires
 src/CMakeFiles/magic.exe.dir/requires: src/CMakeFiles/magic.exe.dir/algebra_lapack.f90.o.requires

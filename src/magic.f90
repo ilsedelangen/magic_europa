@@ -134,6 +134,7 @@ program magic
    use useful, only: abortRun
    use probe_mod, only: initialize_probes, finalize_probes
    use time_schemes, only: type_tscheme
+   use force_average
 
    !use rIterThetaBlocking_mod,ONLY: initialize_rIterThetaBlocking
 #ifdef WITH_LIKWID
@@ -351,6 +352,7 @@ program magic
    call initialize_outRot()
    if ( l_power ) call initialize_output_power()
    call initialize_fields_average_mod()
+   call initialize_force_average()
    if ( l_TO ) call initialize_TO()
 
    if ( rank == 0 ) then

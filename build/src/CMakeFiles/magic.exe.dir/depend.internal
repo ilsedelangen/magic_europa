@@ -20,6 +20,8 @@ src/CMakeFiles/magic.exe.dir/algebra_lapack.f90.o
  /home/delangen/magic/src/algebra_lapack.f90
 src/CMakeFiles/magic.exe.dir/blocking.f90.o
  /home/delangen/magic/src/blocking.f90
+src/CMakeFiles/magic.exe.dir/calc_ave.f90.o
+ /home/delangen/magic/src/calc_ave.f90
 src/CMakeFiles/magic.exe.dir/char_manip.f90.o
  /home/delangen/magic/src/char_manip.f90
 src/CMakeFiles/magic.exe.dir/chebyshev.f90.o
@@ -57,6 +59,8 @@ src/CMakeFiles/magic.exe.dir/fields_average.f90.o
  /home/delangen/magic/src/fields_average.f90
 src/CMakeFiles/magic.exe.dir/finite_differences.f90.o
  /home/delangen/magic/src/finite_differences.f90
+src/CMakeFiles/magic.exe.dir/force_average.f90.o
+ /home/delangen/magic/src/force_average.f90
 src/CMakeFiles/magic.exe.dir/getDlm.f90.o
  /home/delangen/magic/src/getDlm.f90
 src/CMakeFiles/magic.exe.dir/get_nl.f90.o

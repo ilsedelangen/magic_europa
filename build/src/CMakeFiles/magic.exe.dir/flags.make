@@ -4,7 +4,7 @@
 # compile Fortran with /opt/local/mpi/openmpi/openmpi-2.1.2_intel-2019.4/bin/mpif90
 Fortran_FLAGS =    -stand f08 -diag-disable 7025 -g -traceback -convert big -fpp -O3 -xHost -module ../modules  
 
-Fortran_DEFINES = -DBUILD_DATE="\"2023/12/07 16:59:03\"" -DCOMP_OPT -DDEFAULT_OUTPUT_PRECISION=sngl -DDEFAULT_PRECISION=dble -DGIT_VERSION=\"3831ceb\" -DSHT_PADDING -DWITH_MPI -DWITH_PRECOND_BJ -DWITH_PRECOND_S -DWITH_PRECOND_Z -DWITH_PRECOND_Z10 -DWITH_SHTNS -Ddble=2 -Dsngl=1
+Fortran_DEFINES = -DBUILD_DATE="\"2024/01/30 11:55:26\"" -DCOMP_OPT -DDEFAULT_OUTPUT_PRECISION=sngl -DDEFAULT_PRECISION=dble -DGIT_VERSION=\"5651228\" -DSHT_PADDING -DWITH_MPI -DWITH_PRECOND_BJ -DWITH_PRECOND_S -DWITH_PRECOND_Z -DWITH_PRECOND_Z10 -DWITH_SHTNS -Ddble=2 -Dsngl=1
 
 Fortran_INCLUDES = -I/opt/local/intel/ps_xe-2019.4/compilers_and_libraries_2019.4.243/linux/mkl/include -I/opt/local/intel/ps_xe-2019.4/compilers_and_libraries_2019.4.243/linux/mkl/include/fftw -I/usr/include -I/home/delangen/local/include 
 

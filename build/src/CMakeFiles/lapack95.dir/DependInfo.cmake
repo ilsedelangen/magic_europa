@@ -10,11 +10,11 @@ set(CMAKE_Fortran_COMPILER_ID "Intel")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_Fortran
-  "BUILD_DATE=\"2023/12/07 16:59:03\""
+  "BUILD_DATE=\"2024/01/30 11:55:26\""
   "COMP_OPT"
   "DEFAULT_OUTPUT_PRECISION=sngl"
   "DEFAULT_PRECISION=dble"
-  "GIT_VERSION=\"3831ceb\""
+  "GIT_VERSION=\"5651228\""
   "SHT_PADDING"
   "WITH_MPI"
   "WITH_PRECOND_BJ"

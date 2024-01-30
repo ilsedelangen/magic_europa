@@ -317,6 +317,7 @@ contains
 #ifdef WITH_MPI
             call graphOut_mpi(nR,this%gsa%vrc,this%gsa%vtc,this%gsa%vpc, &
                  &            this%gsa%brc,this%gsa%btc,this%gsa%bpc,    &
+                 &            this%gsa%vrc,this%gsa%vtc,this%gsa%vpc,    &       ! Pass velocity field twice as dummy variable instead of LF
                  &            this%gsa%sc,this%gsa%pc,this%gsa%xic,      &
                  &            this%gsa%phic)
 #else
