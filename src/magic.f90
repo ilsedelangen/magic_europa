@@ -489,6 +489,7 @@ program magic
    call finalize_geos(l_par, l_SRIC, l_geosMovie)
    if ( ldtBmem == 1 ) call finalize_dtB_mod
    call finalize_fields_average_mod()
+   call finalize_force_average()
    if ( l_power ) call finalize_output_power()
    call finalize_outRot()
    call finalize_outMisc_mod()
@@ -525,11 +526,12 @@ program magic
 
    PERFOFF
    PERFOUT('main')
+
    !LIKWID_OFF('main')
    LIKWID_CLOSE
 !-- EVERYTHING DONE ! THE END !
 #ifdef WITH_MPI
    call MPI_Finalize(ierr)
-#endif
+#endif 
 
 end program magic

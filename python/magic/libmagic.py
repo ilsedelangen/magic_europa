@@ -49,8 +49,6 @@ def selectField(obj, field, labTex=True, ic=False):
             data_ic = obj.Br_ic
         else:
             data_ic = None
-
-
     elif field in ('LFr'):
         data = obj.LFr
         if labTex:
@@ -72,8 +70,6 @@ def selectField(obj, field, labTex=True, ic=False):
         else:
             label = 'Lfp'
         data_ic = None
-
-
     elif field in ('pressure', 'pre', 'Pre', 'Pressure', 'press', 'Press'):
         data = obj.pre
         if labTex:

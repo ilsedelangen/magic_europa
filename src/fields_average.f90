@@ -405,11 +405,14 @@ contains
                   call scal_to_spat(phi_ave_Rloc(:,nR), Phir, l_R(nR))
                end if
 #ifdef WITH_MPI
-               LFr(:,:) = LFr_ave%f_ave(nR,:,:)
-               LFt(:,:) = LFt_ave%f_ave(nR,:,:)
-               LFp(:,:) = LFp_ave%f_ave(nR,:,:)
+               !LFr(:,:) = LFr_ave%f_ave(nR,:,:)
+               !LFt(:,:) = LFt_ave%f_ave(nR,:,:)
+               !LFp(:,:) = LFp_ave%f_ave(nR,:,:)
+               LFr(:,:) = zero
+               LFt(:,:) = zero
+               LFp(:,:) = zero
                call graphOut_mpi(nR, Vr, Vt, Vp, Br, Bt, Bp, LFr, LFt, LFp, &
-                    &            Sr, Prer, Xir, Phir,n_graph_handle)
+                   &            Sr, Prer, Xir, Phir,n_graph_handle)
 #else
                call graphOut(nR, Vr, Vt, Vp, Br, Bt, Bp, Sr, Prer, Xir, Phir, &
                     &        n_graph_handle)

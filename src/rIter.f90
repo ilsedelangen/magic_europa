@@ -247,9 +247,11 @@ contains
 
             call nl_counter%start_count()
             call this%gsa%get_nl(timeStage, nR, nBc, lRmsCalc)
+
             call LFr_ave%add_r(this%gsa%LFr,time,nR)
             call LFt_ave%add_r(this%gsa%LFt,time,nR)
             call LFp_ave%add_r(this%gsa%LFp,time,nR)
+
             call nl_counter%stop_count(l_increment=.false.)
 
             !-- Get nl loop for r.m.s. computation
@@ -317,7 +319,7 @@ contains
 #ifdef WITH_MPI
             call graphOut_mpi(nR,this%gsa%vrc,this%gsa%vtc,this%gsa%vpc, &
                  &            this%gsa%brc,this%gsa%btc,this%gsa%bpc,    &
-                 &            this%gsa%vrc,this%gsa%vtc,this%gsa%vpc,    &       ! Pass velocity field twice as dummy variable instead of LF
+                 &            LFr_ave%f_ave(nR,:,:),LFt_ave%f_ave(nR,:,:),LFp_ave%f_ave(nR,:,:),    &      
                  &            this%gsa%sc,this%gsa%pc,this%gsa%xic,      &
                  &            this%gsa%phic)
 #else

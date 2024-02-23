@@ -350,11 +350,11 @@ contains
       if ( allocated(vr) ) deallocate(vr)
       if ( allocated(vt) ) deallocate(vt)
       if ( allocated(vp) ) deallocate(vp)
-      if ( l_mag ) then
-          if ( allocated(LFr) ) deallocate(LFr)
-          if ( allocated(LFt) ) deallocate(LFt)
-          if ( allocated(LFp) ) deallocate(LFp)
-      end if
+      !if ( l_mag ) then
+      !    if ( allocated(LFr) ) deallocate(LFr)
+      !    if ( allocated(LFt) ) deallocate(LFt)
+      !    if ( allocated(LFp) ) deallocate(LFp)
+      !end if
       if ( l_heat .and. allocated(entropy) ) deallocate(entropy)
       if ( l_press .and. allocated(pre) ) deallocate(pre)
       if ( l_chemical_conv .and. allocated(xi) ) deallocate(xi)
@@ -383,7 +383,7 @@ contains
       allocate( vt(1:np,1:nt,1:nr) )
       allocate( vp(1:np,1:nt,1:nr) )
       if ( l_mag ) then
-         allocate( LFr(1:np,1:nt,1:nr), LFt(1:np,1:nt,1:nr), LFp(1:np,1:nt,1:nr) )
+      !   allocate( LFr(1:np,1:nt,1:nr), LFt(1:np,1:nt,1:nr), LFp(1:np,1:nt,1:nr) )
          allocate( Br(1:np,1:nt,1:nr), Bt(1:np,1:nt,1:nr), Bp(1:np,1:nt,1:nr) )
       end if
 
@@ -405,14 +405,14 @@ contains
          read(10) dummy
          vp(:,:,ir)=transpose(dummy)
 
-         if ( l_mag ) then
-            read(10) dummy
-            LFr(:,:,ir)=transpose(dummy)
-            read(10) dummy
-            LFt(:,:,ir)=transpose(dummy)
-            read(10) dummy
-            LFp(:,:,ir)=transpose(dummy)
-         end if
+         !if ( l_mag ) then
+         !   read(10) dummy
+         !   LFr(:,:,ir)=transpose(dummy)
+         !   read(10) dummy
+         !   LFt(:,:,ir)=transpose(dummy)
+         !   read(10) dummy
+         !   LFp(:,:,ir)=transpose(dummy)
+         !end if
 
          if ( l_heat ) then
             read(10) dummy

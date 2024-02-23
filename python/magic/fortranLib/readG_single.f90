@@ -367,7 +367,7 @@ contains
       end if
 
       read(10) version
-      read(10) runid
+      read(10) runid 
       if ( version > 13 ) then
          read(10) time, ra, pr, raxi, sc, ek, stef, prmag, radratio, sigma
       else
