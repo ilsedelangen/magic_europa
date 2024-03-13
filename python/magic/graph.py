@@ -156,6 +156,7 @@ class MagicGraph(MagicSetup):
                 G.readg_stream(filename, endian=endian)
             elif access == 'rm':
                 G.readg(filename, endian=endian)
+            print(self.precision, access)
             self.nr = int(G.nr)
             self.n_r_ic_max = int(G.nric)-1
             self.ntheta = int(G.nt)

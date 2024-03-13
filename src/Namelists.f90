@@ -128,7 +128,7 @@ contains
       &    r_probe,theta_probe,n_phi_probes,n_probe_step,      &
       &    n_probe_out,t_probe_start,t_probe_stop,dt_probe,    &
       &    l_earth_likeness,l_max_comp,l_geo,l_2D_spectra,     &
-      &    l_2D_RMS, l_spec_avg
+      &    l_2D_RMS, l_spec_avg, l_force_ave
 
       namelist/mantle/conductance_ma,nRotMa,rho_ratio_ma, &
       &    omega_ma1,omegaOsz_ma1,tShift_ma1,             &
@@ -1179,6 +1179,7 @@ contains
       write(n_out,'(''  theta_probe     ='',ES14.6,'','')') theta_probe
       write(n_out,'(''  n_phi_probes    ='',i3,'','')') n_phi_probes
       write(n_out,'(''  l_average       ='',l3,'','')') l_average
+      write(n_out,'(''  l_force_ave       ='',l3,'','')') l_force_ave
       write(n_out,'(''  l_cmb_field     ='',l3,'','')') l_cmb_field
       write(n_out,'(''  l_dt_cmb_field  ='',l3,'','')') l_dt_cmb_field
       write(n_out,'(''  l_save_out      ='',l3,'','')') l_save_out
@@ -1503,6 +1504,7 @@ contains
       lVerbose      =.false.  ! Tell me what you are doing
       l_average     =.false.  ! Average various quantities in time
       l_spec_avg    =.false.  ! Average spectra in time
+      l_force_ave   =.false.  ! Average (Lorentz) force calculation  
 
       !----- Restart files:
       n_rst_step    =0

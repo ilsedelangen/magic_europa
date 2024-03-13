@@ -16,7 +16,7 @@ module graphOut_mod
        &                          raxi, sc, stef
    use num_param, only: vScale
    use horizontal_data, only: theta_ord, O_sin_theta, n_theta_cal2ord
-   use logic, only: l_mag, l_cond_ic, l_PressGraph, l_chemical_conv, l_heat, &
+   use logic, only: l_mag, l_force_ave, l_cond_ic, l_PressGraph, l_chemical_conv, l_heat, &
        &            l_save_out, l_phase_field, l_full_sphere
    use output_data, only: runid, n_log_file, log_file, tag
    use sht, only: torpol_to_spat_IC
@@ -319,7 +319,7 @@ contains
       write(n_graph_loc) n_r_max, n_theta_max, n_phi_tot, minc, n_r_ic_max
 
       write(n_graph_loc) l_heat,l_chemical_conv, l_phase_field, l_mag, &
-      &                  l_PressGraph, l_cond_ic
+      &                  l_force_ave, l_PressGraph, l_cond_ic
 
       !-- Write colatitudes:
       write(n_graph_loc) (real(theta_ord(n_theta),outp), n_theta=1,n_theta_max)
@@ -405,7 +405,7 @@ contains
 
 !-----------------------------------------------------------------------------------------
      !-- Calculate and write radial LF:
-      if ( l_mag ) then
+      if ( l_force_ave ) then 
 
           fac=or2(n_r)
           do n_phi=1,n_phi_max
@@ -422,7 +422,7 @@ contains
              do n_theta_cal=1,n_theta_max
                 n_theta =n_theta_cal2ord(n_theta_cal)
                 fac=fac_r*O_sin_theta(n_theta_cal)
-                dummy(n_theta,n_phi)=real(fac*LFt(n_theta_cal,n_phi),kind=outp)
+                dummy(n_theta,n_phi)=real(LFt(n_theta_cal,n_phi)/fac_r,kind=outp)
              end do
           end do
           call write_one_field(dummy, n_graph_loc, n_phi_max, n_theta_max)
@@ -433,12 +433,12 @@ contains
              do n_theta_cal=1,n_theta_max
                 n_theta =n_theta_cal2ord(n_theta_cal)
                 fac=fac_r*O_sin_theta(n_theta_cal)
-                dummy(n_theta,n_phi)=real(fac*LFp(n_theta_cal,n_phi),kind=outp)
+                dummy(n_theta,n_phi)=real(LFp(n_theta_cal,n_phi)/fac_r,kind=outp)
              end do
           end do
           call write_one_field(dummy, n_graph_loc, n_phi_max, n_theta_max)
 
-     end if
+      end if
 ! ----------------------------------------------------------------------------------------- 
 
       !-- Write entropy:
@@ -558,7 +558,8 @@ contains
 
       version = 14
       n_fields = 3
-      if ( l_mag ) n_fields = n_fields+6
+      if ( l_mag ) n_fields = n_fields+3
+      if ( l_force_ave ) n_fields = n_fields+3
       if ( l_heat ) n_fields = n_fields+1
       if ( l_PressGraph ) n_fields = n_fields+1
       if ( l_chemical_conv ) n_fields = n_fields+1
@@ -589,6 +590,7 @@ contains
          call MPI_File_Write(n_graph_loc,l_chemical_conv,1,MPI_LOGICAL,st,ierr)
          call MPI_File_Write(n_graph_loc,l_phase_field,1,MPI_LOGICAL,st,ierr)
          call MPI_File_Write(n_graph_loc,l_mag,1,MPI_LOGICAL,st,ierr)
+         !call MPI_File_Write(n_graph_loc,l_force_ave,1,MPI_LOGICAL,st,ierr)
          call MPI_File_Write(n_graph_loc,l_PressGraph,1,MPI_LOGICAL,st,ierr)
          call MPI_File_Write(n_graph_loc,l_cond_ic,1,MPI_LOGICAL,st,ierr)
 

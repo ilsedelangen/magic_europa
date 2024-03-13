@@ -13,7 +13,7 @@ module rIter_mod
        &                td_counter
    use parallel_mod
    use truncation, only: n_phi_max, lm_max, lm_maxMag
-   use logic, only: l_mag, l_conv, l_mag_kin, l_heat, l_ht, l_anel,  &
+   use logic, only: l_mag, l_force_ave, l_conv, l_mag_kin, l_heat, l_ht, l_anel,  &
        &            l_mag_LF, l_conv_nl, l_mag_nl, l_b_nl_cmb,       &
        &            l_b_nl_icb, l_rot_ic, l_cond_ic, l_rot_ma,       &
        &            l_cond_ma, l_dtB, l_store_frame, l_movie_oc,     &
@@ -248,9 +248,11 @@ contains
             call nl_counter%start_count()
             call this%gsa%get_nl(timeStage, nR, nBc, lRmsCalc)
 
-            call LFr_ave%add_r(this%gsa%LFr,time,nR)
-            call LFt_ave%add_r(this%gsa%LFt,time,nR)
-            call LFp_ave%add_r(this%gsa%LFp,time,nR)
+            if ( l_force_ave ) then
+                call LFr_ave%add_r(this%gsa%LFr,time,nR)
+                call LFt_ave%add_r(this%gsa%LFt,time,nR)
+                call LFp_ave%add_r(this%gsa%LFp,time,nR)
+            end if
 
             call nl_counter%stop_count(l_increment=.false.)
 
@@ -279,7 +281,7 @@ contains
          !     and br_vp_lm_cmb in lm-space, respectively the contribution
          !     to these products from the points theta(nThetaStart)-theta(nThetaStop)
          !     These products are used in get_b_nl_bcs.
-         if ( nR == n_r_cmb .and. l_b_nl_cmb ) then
+         if ( nR == n_r_cmb .and. l_b_nl_cmb ) then 
             br_vt_lm_cmb(:)=zero
             br_vp_lm_cmb(:)=zero
             call get_br_v_bcs(this%gsa%brc, this%gsa%vtc, this%gsa%vpc,omega_ma,  &

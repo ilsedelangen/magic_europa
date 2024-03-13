@@ -352,7 +352,7 @@ program magic
    call initialize_outRot()
    if ( l_power ) call initialize_output_power()
    call initialize_fields_average_mod()
-   call initialize_force_average()
+   if ( l_force_ave ) call initialize_force_average()
    if ( l_TO ) call initialize_TO()
 
    if ( rank == 0 ) then
@@ -489,7 +489,7 @@ program magic
    call finalize_geos(l_par, l_SRIC, l_geosMovie)
    if ( ldtBmem == 1 ) call finalize_dtB_mod
    call finalize_fields_average_mod()
-   call finalize_force_average()
+   if ( l_force_ave ) call finalize_force_average()
    if ( l_power ) call finalize_output_power()
    call finalize_outRot()
    call finalize_outMisc_mod()

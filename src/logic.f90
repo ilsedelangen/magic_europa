@@ -10,6 +10,7 @@ module logic
    logical :: l_update_s     ! Switch off entropy update
    logical :: l_update_xi    ! Switch off update of chemical composition
    logical :: l_mag          ! Switch off magnetic terms calculation
+   logical :: l_force_ave    ! Switch off calculation of averaged (Lorentz) force
    logical :: l_conv         ! Switch off convection
    logical :: l_mag_kin      ! Switch related for kinematic dynamo
    logical :: l_SRIC         ! Switch to rotating IC with prescribed rot. rate
